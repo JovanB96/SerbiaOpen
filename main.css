@@ -1,0 +1,10 @@
+.navbar.navbar-inverse {
+  color: #fff;
+  margin: 0;
+}
+#formRow {
+  display: none;
+}
+#edit_i {
+  display: none;
+}

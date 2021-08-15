@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
+  <title>Serbia Open</title>
+</head>
+<body>
+<header class="navbar navbar-inverse">
+  <h4 class="pull-left" id="datum">Datum</h4>
+  <h4 class="pull-right" id="vreme">Vreme</h4>
+</header>
+<div class="jumbotron text-center">
+  <h2>Serbia Open</h2>
+  <h4>Prijava igraca</h4>
+  <input id="accountBtn" type="button" class="btn btn-primary" value="Igraci">
+  <input id="addAccountBtn" type="button" class="btn btn-info" value="Dodaj igraca">
+  <input id="editBtn" type="button" class="btn btn-warning" value="Izmeni/Izbrisi">
+</div>
+<div class="row" id="mainRow">
+  <div class="col-xs-10 col-xs-offset-1">
+    <h2 class="page-header">Prijavljeni igraci</h2>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Red. br.</th>
+              <th>Ime</th>
+              <th>Teniski klub</th>
+              <th>Legitimacija(br.)</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" id="formRow">
+  <div class="col-xs-10 col-xs-offset-1">
+    <h2 class="page-header">Prijavljeni igraci</h2>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+    <form action="#">
+      <input id="id_i" type="text" placeholder="Id" class="form-control"><br>
+      <input id="ime_i" type="text" placeholder="Unesite Vase ime" class="form-control"><br>
+      <input id="tk_i" type="text" placeholder="Ime teniskog kluba" class="form-control"><br>
+      <input id="leg_i" type="text" placeholder="Broj legitimacije" class="form-control"><br>
+      <input id="sub_i" type="button" value="Dodaj igraca" class="btn btn-primary form-control">
+      <input id="edit_i" type="button" value="Izmeni igraca" class="btn btn-success form-control">
+    </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="main.js"></script>
+</body>
+</html>
