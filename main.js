@@ -1,11 +1,11 @@
 var datumH4 = document.getElementById('datum');
 var vremeH4 = document.getElementById('vreme');
 var tBody = document.getElementsByTagName('tbody')[0];
-var accountBtn = document.getElementById('accountBtn');
-var addAccountBtn = document.getElementById('addAccountBtn');
+var playersBtn = document.getElementById('playersBtn');
+var addPlayerBtn = document.getElementById('addPlayerBtn');
 var mainRow = document.getElementById('mainRow');
 var red_B_i = document.getElementById('id_i');
-var accForEdit;
+var playerForEdit;
 var ime_i = document.getElementById('ime_i');
 var tk_i = document.getElementById('tk_i');
 var leg_i = document.getElementById('leg_i');
@@ -14,8 +14,8 @@ var editBtn = document.getElementById('editBtn');
 var edit_i = document.getElementById('edit_i');
 edit_i.addEventListener('click',editDb);
 editBtn.addEventListener('click',newTable);
-accountBtn.addEventListener('click',displayAccounts);
-addAccountBtn.addEventListener('click',showForm);
+playersBtn.addEventListener('click',displayPlayers);
+addPlayerBtn.addEventListener('click',showForm);
 sub_i.addEventListener('click',addToDb);
 var text = "";
 
@@ -33,7 +33,7 @@ var db = [
     leg : 123
   }
 ];
-displayAccounts();
+displayPlayers();
 prikaziDatumiVreme();
 
 function prikaziDatumiVreme() {
@@ -58,7 +58,7 @@ function prikaziDatumiVreme() {
   setTimeout(prikaziDatumiVreme,1000);
 }
 
-function displayAccounts() {
+function displayPlayers() {
   mainRow.style.display = "block";
   formRow.style.display = "none";
   text = "";
@@ -90,7 +90,7 @@ function addToDb() {
   ime_i.value = "";
   tk_i.value= "";
   leg_i.value = "";
-  displayAccounts();
+  displayPlayers();
 }
 function newTable() {
   mainRow.style.display = "block";
@@ -102,24 +102,24 @@ function newTable() {
   tBody.innerHTML = text;
   var allBtns = document.getElementsByClassName('tableBtns');
   for (var i = 0; i < allBtns.length; i++) {
-    allBtns[i].addEventListener('click',editAccount);
+    allBtns[i].addEventListener('click',editPlayer);
   }
 }
-function editAccount() {
+function editPlayer() {
   if (this.value === "delete") {
-    var accForDelete = this.className[0];
-    db.splice(accForDelete,1);
-    displayAccounts();
+    var playerForDelete = this.className[0];
+    db.splice(playerForDelete,1);
+    displayPlayers();
 
   }else{
     showForm();
     sub_i.style.display ="none";
     edit_i.style.display = "block";
-    accForEdit = this.className[0];
-    red_B_i.value = db[accForEdit].red_B;
-    ime_i.value = db[accForEdit].ime;
-    tk_i.value= db[accForEdit].tk;
-    leg_i.value = db[accForEdit].leg;
+    playerForEdit = this.className[0];
+    red_B_i.value = db[playerForEdit].red_B;
+    ime_i.value = db[playerForEdit].ime;
+    tk_i.value= db[playerForEdit].tk;
+    leg_i.value = db[playerEdit].leg;
   }
 }
 function editDb() {
@@ -129,6 +129,6 @@ function editDb() {
     tk : tk_i.value,
     leg : leg_i.value
   }
-  db[accForEdit] = obj;
-  displayAccounts();
+  db[playerForEdit] = obj;
+  displayPlayers();
 }
